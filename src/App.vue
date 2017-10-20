@@ -23,6 +23,8 @@
 </template>
 
 <script>
+require('dotenv').config()
+
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import VideoDetail from './components/VideoDetail.vue'
