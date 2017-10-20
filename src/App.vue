@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--  Header -->
-    <app-header></app-header>
+    <app-header :title="title"></app-header>
     <!--  Main -->
     <main class='section'>
       <div class="container">
@@ -18,7 +18,7 @@
       </div>
     </main>
     <!--  Footer -->
-    <app-footer></app-footer>
+    <app-footer :title="title" :author="author"></app-footer>
   </div>
 </template>
 
@@ -37,7 +37,8 @@ export default {
   },
   data () {
     return {
-      title: 'You tube player using Vue and Bulma'
+      title: 'YouTube Player using Vue',
+      author: 'ok palm'
     }
   }
 }
