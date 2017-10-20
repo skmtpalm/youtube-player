@@ -8,7 +8,7 @@
         <div class="columns">
           <div class="column">
             <!--  Video Detail -->
-            <video-detail></video-detail>
+            <video-detail :video="sampleVideo"></video-detail>
           </div>
           <div class="column is-one-third">
             <!--  Video List -->
@@ -40,7 +40,11 @@ export default {
   data () {
     return {
       title: 'YouTube Player using Vue',
-      author: 'ok palm'
+      author: 'ok palm',
+      sampleVideo: {
+        id: 'KMX1mFEmM3E',
+      },
+      videos: []
     }
   }
 }
