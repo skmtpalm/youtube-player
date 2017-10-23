@@ -24,6 +24,7 @@
 
 <script>
 import axios from 'axios'
+import _ from 'lodash'
 
 // Components
 import Header from './components/Header.vue'
@@ -71,6 +72,9 @@ export default {
     },
     setCurrentVideo(index) {
       console.log(index)
+    },
+    findVideo(index) {
+      return
     }
   },
   mounted() {
