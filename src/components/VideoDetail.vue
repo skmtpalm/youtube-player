@@ -5,7 +5,8 @@
     </div>
     <div class="video-detail__text">
       <div class="content">
-        <p><strong>Angular vs React.js vs Vue.js - My Thoughts!</strong></p>
+        <p><strong>{{ video.snippet.title }}</strong><br />
+        {{ video.snippet.description }}</p>
       </div>
     </div>
   </div>
@@ -20,7 +21,7 @@ export default {
   },
   computed: {
     videoUrl() {
-      return `http://www.youtube.com/embed/${this.video.id}`
+      return `http://www.youtube.com/embed/${this.video.id.videoId}`
     }
   }
 }
