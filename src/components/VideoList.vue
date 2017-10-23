@@ -1,6 +1,10 @@
 <template>
   <aside>
-    <article v-for="video in videos" class="media">
+    <article
+      v-for="(video, index) in videos"
+      :key="video.id.videoId"
+      :index="index"
+      class="media">
       <figure class="media-left">
         <p class="image is-128x72">
           <img :src="video.snippet.thumbnails.high.url" />
@@ -9,7 +13,7 @@
       <div class="media-content">
         <div class="content">
           <p>
-            <a class="#">
+            <a class="#" @click="selectVideo(index)">
               <strong>{{ video.snippet.title }}</strong>
             </a><br />
             <span class="is-size-7 has-text-grey">{{ video.snippet.channelTitle }}</span>
@@ -25,6 +29,11 @@ export default {
   props: {
     videos: {
       type: Array
+    }
+  },
+  methods: {
+    selectVideo(index) {
+      this.$emit('setCurrentVideo', index)
     }
   }
 }

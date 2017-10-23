@@ -12,7 +12,7 @@
           </div>
           <div class="column is-one-third">
             <!--  Video List -->
-            <video-list :videos="videos"></video-list>
+            <video-list :videos="videos" @setCurrentVideo="setCurrentVideo"></video-list>
           </div>
         </div>
       </div>
@@ -68,6 +68,13 @@ export default {
       }).catch((err) => {
         console.log(err)
       })
+    },
+    setCurrentVideo(index) {
+      const selectedVideo = this.findVideo(index)
+      this.currentVideo = Object.assign({}, this.currentVideo, selectedVideo)
+    },
+    findVideo(index) {
+      return this.videos[index]
     }
   },
   mounted() {
