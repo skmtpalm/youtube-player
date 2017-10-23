@@ -71,10 +71,11 @@ export default {
       })
     },
     setCurrentVideo(index) {
-      console.log(index)
+      const selectedVideo = this.findVideo(index)
+      this.currentVideo = Object.assign({}, this.currentVideo, selectedVideo)
     },
     findVideo(index) {
-      return
+      return this.videos[index]
     }
   },
   mounted() {
