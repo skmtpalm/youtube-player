@@ -1,7 +1,7 @@
 <template>
   <div class="video-detail">
     <div class="video-wrap">
-      <iframe :src="videoUrl"></iframe>
+      <iframe :src="videoUrl" allowfullscreen></iframe>
     </div>
     <div class="video-detail__text">
       <div class="content">
