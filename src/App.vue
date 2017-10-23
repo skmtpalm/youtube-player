@@ -24,7 +24,6 @@
 
 <script>
 import axios from 'axios'
-import _ from 'lodash'
 
 // Components
 import Header from './components/Header.vue'
