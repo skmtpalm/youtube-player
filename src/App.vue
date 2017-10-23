@@ -12,7 +12,7 @@
           </div>
           <div class="column is-one-third">
             <!--  Video List -->
-            <video-list :videos="videos"></video-list>
+            <video-list :videos="videos" @setCurrentVideo="setCurrentVideo"></video-list>
           </div>
         </div>
       </div>
@@ -68,6 +68,9 @@ export default {
       }).catch((err) => {
         console.log(err)
       })
+    },
+    setCurrentVideo(index) {
+      console.log(index)
     }
   },
   mounted() {
