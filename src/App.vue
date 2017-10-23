@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--  Header -->
-    <app-header :title="title"></app-header>
+    <app-header :title="title" @searchVideo="searchVideo"></app-header>
     <!--  Main -->
     <main class='section'>
       <div class="container">
@@ -41,13 +41,13 @@ export default {
   },
   data () {
     return {
-      title: 'YouTube Player using Vue',
+      title: 'YouTube Player made with Vue',
       author: 'ok palm',
       videos: [],
       currentVideo: { id: {
         videoId: 'gGdeFsjaD1c'
       }},
-      initialKeyWord: 'Frontend Developer'
+      initialKeyWord: 'Vuejs'
     }
   },
   methods: {
@@ -75,6 +75,9 @@ export default {
     },
     findVideo(index) {
       return this.videos[index]
+    },
+    searchVideo(keyword) {
+      this.fetchData(keyword)
     }
   },
   mounted() {
