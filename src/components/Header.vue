@@ -10,10 +10,10 @@
           <div class="navbar-item">
             <div class="field has-addons">
               <div class="control">
-                <input class="input" type='text' placeholder="Search.." />
+                <input v-model="keyword" class="input" type='text' placeholder="Search.." />
               </div>
               <div class="control">
-                <a class="button is-light">Search</a>
+                <a @click="searchVideo" class="button is-light">Search</a>
               </div>
             </div>
           </div>
@@ -27,6 +27,11 @@ export default {
   props: {
     title: {
       type: String
+    }
+  },
+  methods: {
+    searchVideo() {
+      this.$emit('searchVideo', this.keyword)
     }
   }
 }
